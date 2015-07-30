@@ -1,148 +1,147 @@
-# -*- coding: gbk -*-
-#
-#µÀ¾ßÊ¹ÓÃ¹¦ÄÜ±í.csv
-# ÎïÆ·±àºÅ : id
-# ÈÎÎñ·¢²¼·ş : publishTag
-# ¿ÉÊ¹ÓÃµÀ¾ß×ÓÀàĞÍ : sType
-# ÅúÁ¿Ê¹ÓÃÀàĞÍ : batchUseType
-# ÊÇ·ñÄÜÔÚ¿ç·şÕ½³¡ÏÂÊ¹ÓÃ : canUseBySoul
-# ÊÇ·ñÎª±»¶¯Ê¹ÓÃ : passiveUse
-# ±»¶¯Ê¹ÓÃÓÅÏÈ¼¶ : usePriority
-# ÊÇ·ñÊ¹ÓÃºóÏûÊ§ : delAfterUse
-# ÊÇ·ñÊ¹ÓÃ³É¹¦ºóÏûÊ§ : delAfterUseSuc
-# Ê¹ÓÃ´ÎÊı : timeLimit
-# ÊÇ·ñÊ¹ÓÃ´ÎÊı¹ıºóÏûÊ§ : timeLimitExpireType
-# ´ÎÊıÓÃÍêºó±ä³ÉµÄÎïÆ·ID : timeLimitChangeId
-# ´ÎÊıÓÃÍêºó±ä³ÉµÄÎïÆ·ÊıÄ¿ : timeLimitChangeAmount
-# Çå³ıÈÎÎñ±àºÅ : resetQuest
-# »Ö¸´HP : hpAdd
-# »Ö¸´HP°Ù·Ö±È : hpAddPercent
-# »Ö¸´MP : addMp
-# »Ö¸´MP°Ù·Ö±È : mpAddPercent
-# »Ö¸´EP : epAdd
-# »Ö¸´EP°Ù·Ö±È : epAddPercent
-# »Ö¸´VP : vpAdd
-# »Ö¸´VP°Ù·Ö±È : vpAddPercent
-# ¸½´ø¾­ÑéÖµ : expAdd
-# Ê¹ÓÃÔö¼ÓÉùÍûID : fameId
-# Ê¹ÓÃÔö¼ÓÉùÍûÊıÁ¿ : fameNum
-# Ôö¼Ó1ÏµÎŞË« : wsAddA
-# Ôö¼Ó2ÏµÎŞË« : wsAddB
-# Ê¹ÓÃÏû³ıµÄÉ±Â¾Öµ : pkPunishTimeRed
-# Ê¹ÓÃÇå³şÉùÍûÖµ : fameIds
-# Ê¹ÓÃ»ñµÃÌåÁ¦ : labourAdd
-# ÌåÁ¦±ä»¯ : modifyLabour
-# ÄÔÁ¦±ä»¯ : modifyMental
-# Ê¹ÓÃºóµ÷ÓÃµÄbuff±àºÅ : stateIds
-# µ÷ÓÃµÄbuffµÈ¼¶ : stateLv
-# µ÷ÓÃÊÂ¼ş : events
-# ÁìÈ¡Ë«±¶Ê±¼ä : expBonusData
-# ÎòĞÔÆ¿¼¤»îÊ±¼ä : vpStorageExptireTime
-# ¿ªÏä×Ó¹ØÁª½±Àø·Ö×éID : itemSetInfo
-# ¿ªÏä×Ó¹ØÁª½±Àø°üID : itemBoxInfo
-# È¾ÁÏÀàĞÍ : dyeType
-# È¾É«Ğ§¹ûÊ±Ğ§ : dyeTtl
-# Ó¡»¨ÌùÍ¼ : texture
-# È¾É«Öµ : color
-# Èİ¹â²ÎÊı : rongGuang
-# Èİ¹âÓĞĞ§ÆÚ : rongGuangTtl
-# ÇåÑıÁ¦Öµ : minusYaoliValue
-# ¼ÓÑıÁ¦Öµ : addYaoliValue
-# ÕÙ»½ÔØ¾ß±àºÅ : zaijuNo
-# Ôö¼ÓÍöÃüµº¹«»áÉÍ½ğ : addWmdScore
-# Ê¹ÓÃ¼¼ÄÜID : skillId
-# ¼¼ÄÜµÈ¼¶ : skillLv
-# Ê¹ÓÃºó³¢ÊÔ½ÓÈ¡ÈÎÎñID : quest
-# Ê¹ÓÃºó³¢ÊÔ½ÓÈ¡Ñ­»·ÈÎÎñID : questLoop
-# ÇøÓò´¥·¢±ê¼Ç¹ØÁªID : markerId
-# ĞèÒªÈÎÎñ²ÅÄÜ´¥·¢¶Ô¹ÖÊ¹ÓÃµÀ¾ß : mQuest
-# ¹ÖÎï±àºÅ : mCharType
-# ¶Ô¹Ö£¨Ê¬Ìå£©Ê¹ÓÃÎïÆ·¾àÀë : scope
-# ´¥·¢Ê±¹ÖÎïÑªÁ¿×îµÍ±ÈÂÊ : mHpRate
-# ½±ÀøÎïÆ· : rewardItems
-# ¹Ò½Ó¹ÖÎïÉíÉÏµÄÌØĞ§ : mEffect
-# ¹ÖÎïµÈ¼¶·¶Î§ : lvLimit
-# ¶ÔÓ¦¸±±¾¶ÔÏó : midasFbEntityNo
-# ´«ËÍ×ø±ê : destination
-# ¶à»Ø³Ìµã´«ËÍ·û : multiDestination
-# Ê¹ÓÃµÀ¾ß¿ÉÑ§Ï°µÄ¼¼ÄÜ±àºÅ : learnSkillId
-# ĞèÇóµöÓãµÈ¼¶ : fishingLvReq
-# ÎüÒıÁ¦ : attraction
-# Ôö¼ÓÊìÁ·¶È : fishingExpAdd
-# ÎïÆ·µÈ¼¶ : lv
-# Ôö¼ÓÌ½ÃØÊìÁ·¶È : exploreExpAdd
-# Ê¹ÓÃ´ÎÊıÏŞÖÆ×é : useLimitGroup
-# Ê¹ÓÃ´ÎÊıÏŞÖÆ·´À¡ĞÅÏ¢ÆÁ±Î : forbidUseLimitMsg
-# ¿Û³ıÉùÍûID : checkFameId
-# ¿Û³ıÉùÍûÊıÖµ : checkFameNum
-# ¿Û³ıÉùÍûÖÜÆÚ : checkFamePeriod
-# ÖÜÆÚ½×¶ÎÏµÊı : checkFameRatio
-# Íâ¹ÛÖ¸¶¨ĞøÆÚÀàĞÍ : renewalType
-# ĞøÆÚÔö¼ÓÓµÓĞ¶È : ownership
-# Íâ¹Û¹«¹²ĞøÆÚÀàĞÍ : commonRenewalType
-# ĞøÆÚÔö¼ÓÊ±¼ä³¤¶È : ttl
-# ÎÆÓ¡µÈ¼¶ÏŞÖÆ : maxGemLv
-# ÊÇ·ñÖØÖÃÊôĞÔµã : clearPoint
-# ÊÇ·ñÖØÖÃ¼¼ÄÜµã : clearSPoint
-# Ôö¼ÓÇ±ÄÜµãÊıÁ¿ : pointAdd
-# ·µ»¹Ç±ÄÜµãÊıÖµ : resetPropVal
-# ÊôĞÔÒ³ÓĞĞ§ÆÚ : propSchemeExpireTime
-# Ê¹ÓÃ»ñµÃ³ÆºÅ : rewardTitle
-# ÁÄÌìÏûºÄµÀ¾ßÀàĞÍ : itemChatType
-# ĞŞÁ¶ÊéĞŞÁ¶µÄ¼¼ÄÜID : enhanceSkillId
-# ĞŞÁ¶Êé»ñµÃµÄ¼¼ÄÜµã : enhanceSkillPart
-# ¿ÕÕ½Ö÷¶¯¼¼ÄÜÑ§Ï° : SUBTYPE_2_AIR_SKILL_BOOK
-# ¿ÕÕ½±»¶¯¼¼ÄÜÑ§Ï° : SUBTYPE_2_AIR_PSKILL_BOOK
-# ½âËøµÄboss±àºÅ : bossCharType
-# ÕÙ»½¹ÖÎïIDµÈ¼¶¼°ÊıÁ¿ : monsterInfo
-# ÕÙ»½¹ÖÎïËæ»ú°ë¾¶ : radii
-# ³ÇÕ½½¨Ôì±ê¼ÇNPC : cmarkerId
-# ½¨ÔìÀàĞÍ : buildingType
-# ½¨ÔìÎïID : buildingId
-# ÄÚºËID : stoneCoreId
-# ³ÇÕ½ÉèÊ©½¨Ôì¶¯×÷ : actionId
-# Ñ§Ï°Éú»î¼¼ÄÜÅä·½ : lsRecipe
-# Í¨³®ÕÛËãÎªµÄ¹«»á×Ê½ğ : guildMoney
-# ÕÛËãÎª¹«»á×ÊÔ´µÄ±¶Êı : num
-# ¾èÏ×¿ÉµÃ¹«»á¹±Ï× : contrib
-# Ê¹ÓÃºóÔö¼Ó¶ş²â»ı·ÖÖµ : achieveScore
-# ×øÆï³á°òÀàĞÍ : rideWingType
-# ±¥Ê³¶ÈÏûºÄ¼õ»ºÏµÊı : duraDecay
-# ±¥Ê³¶È¼õ»º³ÖĞøÊ±¼ä : duraTTL
-# ±¥Ê³¶ÈÔö¼ÓÖµ : duraAdd
-# ÏŞ¶¨Î¹ÑøÆ·ÖÊÉÏÏŞ : maxQualityLimit
-# ÈÚºÏ¶È¼ÓËÙÏµÊı : starExpBoost
-# ÈÚºÏ¶È¼ÓËÙ³ÖĞøÊ±¼ä : expTTL
-# ÈÚºÏ¶ÈÔö¼ÓÖµ : starExpAdd
-# Âú±¥Ê³¶È³ÖĞøÊ±¼ä : duraHoldTTL
-# ÍÏÎ²ÌØĞ§ÑùÊ½ : tailEffect
-# ÌØĞ§³ÖĞøÊ±¼ä : effectTTL
-# ËÙ¶È¹²Ïí³ÖĞøÊ±¼ä : shareSpeedTTL
-# ·ÇÕ½¶·ÁÙÊ±ËÙ¶ÈID : tempNonCombatSpeedSubId
-# Õ½¶·ÁÙÊ±ËÙ¶ÈID : tempCombatSpeedSubId
-# ÁÙÊ±ËÙ¶È³ÖĞøÊ±¼ä : tempSpeedTTL
-# ·¢ĞÍ±àºÅ : faxing_style
-# ×°ÊÎ±àºÅ : zhuangshi_style
-# ĞÔ±ğÏŞÖÆ : sex
-# ÌåĞÍÏŞÖÆ : bodyType
-# ÀÖÆ÷ÒıÓÃ±íÇé¶¯×÷ID : emoteId
-# ÑÌ»¨µÀ¾ßÒıÓÃÌØĞ§ID : fireworksId
-# ¼ø¶¨·ûÀàĞÍ : identifyType
-# ¿ªÍ¨VIPÊ¹ÓÃbuff±àºÅ : vipStateIds
-# ÉùÍûÊÕ¼¯id : fameCollectId
-# Ñ§Ï°Éú»î¼¼ÄÜÅä·½id : abilityId
-# ºÅ½ÇÆ¤·ôID : labaId
-# Ğø·ÑÊ±¼ä : addTime
-# Ê¹ÓÃÔö¼Ó¶àÉÙ¾ü½× : junJieVal
-# Ê¹ÓÃÔö¼ÓÇıÄ§¹±Ï×µã : qumoVal
-# ¿Û³ıcdµÄ¸±±¾ID : fbNos
-# ¿Û³ıµÄÆ£ÀÍ¶ÈµãÊı : decTired
-# ¿ªÆô³É³¤·şÎñ°ü : packageID
-# ¿ªÆô³É³¤·şÎñ°üÊ±¼äÌìÊı : days
+#coding=utf-8#
+#é“å…·ä½¿ç”¨åŠŸèƒ½è¡¨.csv
+# ç‰©å“ç¼–å· : id
+# ä»»åŠ¡å‘å¸ƒæœ : publishTag
+# å¯ä½¿ç”¨é“å…·å­ç±»å‹ : sType
+# æ‰¹é‡ä½¿ç”¨ç±»å‹ : batchUseType
+# æ˜¯å¦èƒ½åœ¨è·¨æœæˆ˜åœºä¸‹ä½¿ç”¨ : canUseBySoul
+# æ˜¯å¦ä¸ºè¢«åŠ¨ä½¿ç”¨ : passiveUse
+# è¢«åŠ¨ä½¿ç”¨ä¼˜å…ˆçº§ : usePriority
+# æ˜¯å¦ä½¿ç”¨åæ¶ˆå¤± : delAfterUse
+# æ˜¯å¦ä½¿ç”¨æˆåŠŸåæ¶ˆå¤± : delAfterUseSuc
+# ä½¿ç”¨æ¬¡æ•° : timeLimit
+# æ˜¯å¦ä½¿ç”¨æ¬¡æ•°è¿‡åæ¶ˆå¤± : timeLimitExpireType
+# æ¬¡æ•°ç”¨å®Œåå˜æˆçš„ç‰©å“ID : timeLimitChangeId
+# æ¬¡æ•°ç”¨å®Œåå˜æˆçš„ç‰©å“æ•°ç›® : timeLimitChangeAmount
+# æ¸…é™¤ä»»åŠ¡ç¼–å· : resetQuest
+# æ¢å¤HP : hpAdd
+# æ¢å¤HPç™¾åˆ†æ¯” : hpAddPercent
+# æ¢å¤MP : addMp
+# æ¢å¤MPç™¾åˆ†æ¯” : mpAddPercent
+# æ¢å¤EP : epAdd
+# æ¢å¤EPç™¾åˆ†æ¯” : epAddPercent
+# æ¢å¤VP : vpAdd
+# æ¢å¤VPç™¾åˆ†æ¯” : vpAddPercent
+# é™„å¸¦ç»éªŒå€¼ : expAdd
+# ä½¿ç”¨å¢åŠ å£°æœ›ID : fameId
+# ä½¿ç”¨å¢åŠ å£°æœ›æ•°é‡ : fameNum
+# å¢åŠ 1ç³»æ— åŒ : wsAddA
+# å¢åŠ 2ç³»æ— åŒ : wsAddB
+# ä½¿ç”¨æ¶ˆé™¤çš„æ€æˆ®å€¼ : pkPunishTimeRed
+# ä½¿ç”¨æ¸…æ¥šå£°æœ›å€¼ : fameIds
+# ä½¿ç”¨è·å¾—ä½“åŠ› : labourAdd
+# ä½“åŠ›å˜åŒ– : modifyLabour
+# è„‘åŠ›å˜åŒ– : modifyMental
+# ä½¿ç”¨åè°ƒç”¨çš„buffç¼–å· : stateIds
+# è°ƒç”¨çš„buffç­‰çº§ : stateLv
+# è°ƒç”¨äº‹ä»¶ : events
+# é¢†å–åŒå€æ—¶é—´ : expBonusData
+# æ‚Ÿæ€§ç“¶æ¿€æ´»æ—¶é—´ : vpStorageExptireTime
+# å¼€ç®±å­å…³è”å¥–åŠ±åˆ†ç»„ID : itemSetInfo
+# å¼€ç®±å­å…³è”å¥–åŠ±åŒ…ID : itemBoxInfo
+# æŸ“æ–™ç±»å‹ : dyeType
+# æŸ“è‰²æ•ˆæœæ—¶æ•ˆ : dyeTtl
+# å°èŠ±è´´å›¾ : texture
+# æŸ“è‰²å€¼ : color
+# å®¹å…‰å‚æ•° : rongGuang
+# å®¹å…‰æœ‰æ•ˆæœŸ : rongGuangTtl
+# æ¸…å¦–åŠ›å€¼ : minusYaoliValue
+# åŠ å¦–åŠ›å€¼ : addYaoliValue
+# å¬å”¤è½½å…·ç¼–å· : zaijuNo
+# å¢åŠ äº¡å‘½å²›å…¬ä¼šèµé‡‘ : addWmdScore
+# ä½¿ç”¨æŠ€èƒ½ID : skillId
+# æŠ€èƒ½ç­‰çº§ : skillLv
+# ä½¿ç”¨åå°è¯•æ¥å–ä»»åŠ¡ID : quest
+# ä½¿ç”¨åå°è¯•æ¥å–å¾ªç¯ä»»åŠ¡ID : questLoop
+# åŒºåŸŸè§¦å‘æ ‡è®°å…³è”ID : markerId
+# éœ€è¦ä»»åŠ¡æ‰èƒ½è§¦å‘å¯¹æ€ªä½¿ç”¨é“å…· : mQuest
+# æ€ªç‰©ç¼–å· : mCharType
+# å¯¹æ€ªï¼ˆå°¸ä½“ï¼‰ä½¿ç”¨ç‰©å“è·ç¦» : scope
+# è§¦å‘æ—¶æ€ªç‰©è¡€é‡æœ€ä½æ¯”ç‡ : mHpRate
+# å¥–åŠ±ç‰©å“ : rewardItems
+# æŒ‚æ¥æ€ªç‰©èº«ä¸Šçš„ç‰¹æ•ˆ : mEffect
+# æ€ªç‰©ç­‰çº§èŒƒå›´ : lvLimit
+# å¯¹åº”å‰¯æœ¬å¯¹è±¡ : midasFbEntityNo
+# ä¼ é€åæ ‡ : destination
+# å¤šå›ç¨‹ç‚¹ä¼ é€ç¬¦ : multiDestination
+# ä½¿ç”¨é“å…·å¯å­¦ä¹ çš„æŠ€èƒ½ç¼–å· : learnSkillId
+# éœ€æ±‚é’“é±¼ç­‰çº§ : fishingLvReq
+# å¸å¼•åŠ› : attraction
+# å¢åŠ ç†Ÿç»ƒåº¦ : fishingExpAdd
+# ç‰©å“ç­‰çº§ : lv
+# å¢åŠ æ¢ç§˜ç†Ÿç»ƒåº¦ : exploreExpAdd
+# ä½¿ç”¨æ¬¡æ•°é™åˆ¶ç»„ : useLimitGroup
+# ä½¿ç”¨æ¬¡æ•°é™åˆ¶åé¦ˆä¿¡æ¯å±è”½ : forbidUseLimitMsg
+# æ‰£é™¤å£°æœ›ID : checkFameId
+# æ‰£é™¤å£°æœ›æ•°å€¼ : checkFameNum
+# æ‰£é™¤å£°æœ›å‘¨æœŸ : checkFamePeriod
+# å‘¨æœŸé˜¶æ®µç³»æ•° : checkFameRatio
+# å¤–è§‚æŒ‡å®šç»­æœŸç±»å‹ : renewalType
+# ç»­æœŸå¢åŠ æ‹¥æœ‰åº¦ : ownership
+# å¤–è§‚å…¬å…±ç»­æœŸç±»å‹ : commonRenewalType
+# ç»­æœŸå¢åŠ æ—¶é—´é•¿åº¦ : ttl
+# çº¹å°ç­‰çº§é™åˆ¶ : maxGemLv
+# æ˜¯å¦é‡ç½®å±æ€§ç‚¹ : clearPoint
+# æ˜¯å¦é‡ç½®æŠ€èƒ½ç‚¹ : clearSPoint
+# å¢åŠ æ½œèƒ½ç‚¹æ•°é‡ : pointAdd
+# è¿”è¿˜æ½œèƒ½ç‚¹æ•°å€¼ : resetPropVal
+# å±æ€§é¡µæœ‰æ•ˆæœŸ : propSchemeExpireTime
+# ä½¿ç”¨è·å¾—ç§°å· : rewardTitle
+# èŠå¤©æ¶ˆè€—é“å…·ç±»å‹ : itemChatType
+# ä¿®ç‚¼ä¹¦ä¿®ç‚¼çš„æŠ€èƒ½ID : enhanceSkillId
+# ä¿®ç‚¼ä¹¦è·å¾—çš„æŠ€èƒ½ç‚¹ : enhanceSkillPart
+# ç©ºæˆ˜ä¸»åŠ¨æŠ€èƒ½å­¦ä¹  : SUBTYPE_2_AIR_SKILL_BOOK
+# ç©ºæˆ˜è¢«åŠ¨æŠ€èƒ½å­¦ä¹  : SUBTYPE_2_AIR_PSKILL_BOOK
+# è§£é”çš„bossç¼–å· : bossCharType
+# å¬å”¤æ€ªç‰©IDç­‰çº§åŠæ•°é‡ : monsterInfo
+# å¬å”¤æ€ªç‰©éšæœºåŠå¾„ : radii
+# åŸæˆ˜å»ºé€ æ ‡è®°NPC : cmarkerId
+# å»ºé€ ç±»å‹ : buildingType
+# å»ºé€ ç‰©ID : buildingId
+# å†…æ ¸ID : stoneCoreId
+# åŸæˆ˜è®¾æ–½å»ºé€ åŠ¨ä½œ : actionId
+# å­¦ä¹ ç”Ÿæ´»æŠ€èƒ½é…æ–¹ : lsRecipe
+# é€šé’æŠ˜ç®—ä¸ºçš„å…¬ä¼šèµ„é‡‘ : guildMoney
+# æŠ˜ç®—ä¸ºå…¬ä¼šèµ„æºçš„å€æ•° : num
+# æçŒ®å¯å¾—å…¬ä¼šè´¡çŒ® : contrib
+# ä½¿ç”¨åå¢åŠ äºŒæµ‹ç§¯åˆ†å€¼ : achieveScore
+# åéª‘ç¿…è†€ç±»å‹ : rideWingType
+# é¥±é£Ÿåº¦æ¶ˆè€—å‡ç¼“ç³»æ•° : duraDecay
+# é¥±é£Ÿåº¦å‡ç¼“æŒç»­æ—¶é—´ : duraTTL
+# é¥±é£Ÿåº¦å¢åŠ å€¼ : duraAdd
+# é™å®šå–‚å…»å“è´¨ä¸Šé™ : maxQualityLimit
+# èåˆåº¦åŠ é€Ÿç³»æ•° : starExpBoost
+# èåˆåº¦åŠ é€ŸæŒç»­æ—¶é—´ : expTTL
+# èåˆåº¦å¢åŠ å€¼ : starExpAdd
+# æ»¡é¥±é£Ÿåº¦æŒç»­æ—¶é—´ : duraHoldTTL
+# æ‹–å°¾ç‰¹æ•ˆæ ·å¼ : tailEffect
+# ç‰¹æ•ˆæŒç»­æ—¶é—´ : effectTTL
+# é€Ÿåº¦å…±äº«æŒç»­æ—¶é—´ : shareSpeedTTL
+# éæˆ˜æ–—ä¸´æ—¶é€Ÿåº¦ID : tempNonCombatSpeedSubId
+# æˆ˜æ–—ä¸´æ—¶é€Ÿåº¦ID : tempCombatSpeedSubId
+# ä¸´æ—¶é€Ÿåº¦æŒç»­æ—¶é—´ : tempSpeedTTL
+# å‘å‹ç¼–å· : faxing_style
+# è£…é¥°ç¼–å· : zhuangshi_style
+# æ€§åˆ«é™åˆ¶ : sex
+# ä½“å‹é™åˆ¶ : bodyType
+# ä¹å™¨å¼•ç”¨è¡¨æƒ…åŠ¨ä½œID : emoteId
+# çƒŸèŠ±é“å…·å¼•ç”¨ç‰¹æ•ˆID : fireworksId
+# é‰´å®šç¬¦ç±»å‹ : identifyType
+# å¼€é€šVIPä½¿ç”¨buffç¼–å· : vipStateIds
+# å£°æœ›æ”¶é›†id : fameCollectId
+# å­¦ä¹ ç”Ÿæ´»æŠ€èƒ½é…æ–¹id : abilityId
+# å·è§’çš®è‚¤ID : labaId
+# ç»­è´¹æ—¶é—´ : addTime
+# ä½¿ç”¨å¢åŠ å¤šå°‘å†›é˜¶ : junJieVal
+# ä½¿ç”¨å¢åŠ é©±é­”è´¡çŒ®ç‚¹ : qumoVal
+# æ‰£é™¤cdçš„å‰¯æœ¬ID : fbNos
+# æ‰£é™¤çš„ç–²åŠ³åº¦ç‚¹æ•° : decTired
+# å¼€å¯æˆé•¿æœåŠ¡åŒ… : packageID
+# å¼€å¯æˆé•¿æœåŠ¡åŒ…æ—¶é—´å¤©æ•° : days
 # useLimit : useLimit
 
 data = {
-    2147483647:{'timestamp': 1438081855},
+    2147483647:{'timestamp': 1438164509},
     989:{'sType': 1, 'canUseBySoul': 1, 'delAfterUseSuc': 1, 'stateIds': (39044,), 'stateLv': '10', },
     990:{'sType': 1, 'canUseBySoul': 1, 'delAfterUseSuc': 1, 'stateIds': (37082, 37921), 'stateLv': '10', },
     991:{'sType': 32, 'delAfterUseSuc': 1, 'minusYaoliValue': 1000, },
@@ -179,6 +178,7 @@ data = {
     99989:{'sType': 24, 'delAfterUseSuc': 1, 'rewardTitle': 20149, },
     99993:{'sType': 24, 'delAfterUseSuc': 1, 'rewardTitle': 20155, },
     99995:{'sType': 6, 'delAfterUseSuc': 1, 'itemSetInfo': (519, 2), },
+    207013:{},
     215000:{'sType': 24, 'delAfterUseSuc': 1, 'rewardTitle': 40002, },
     215001:{'sType': 24, 'delAfterUseSuc': 1, 'rewardTitle': 40003, },
     215002:{'sType': 24, 'delAfterUseSuc': 1, 'rewardTitle': 40004, },
@@ -4515,6 +4515,10 @@ data = {
     331121:{'sType': 6, 'batchUseType': 1, 'delAfterUseSuc': 1, 'itemBoxInfo': (745, 1), 'useLimit': [(2, 2),], },
     331122:{'sType': 6, 'batchUseType': 1, 'delAfterUseSuc': 1, 'itemSetInfo': (2504, 1), },
     331123:{'sType': 6, 'batchUseType': 1, 'delAfterUseSuc': 1, 'itemSetInfo': (2598, 1), 'useLimit': [(3, 1),], },
+    331124:{'sType': 6, 'batchUseType': 1, 'delAfterUseSuc': 1, 'itemSetInfo': (2599, 1), 'useLimit': [(1, 5), (3, 75)], },
+    331125:{'sType': 6, 'batchUseType': 1, 'delAfterUseSuc': 1, 'itemSetInfo': (2600, 1), 'useLimit': [(1, 5), (3, 75)], },
+    331126:{'sType': 6, 'batchUseType': 1, 'delAfterUseSuc': 1, 'itemSetInfo': (2601, 1), 'useLimit': [(1, 4), (3, 75)], },
+    331127:{'sType': 6, 'batchUseType': 1, 'delAfterUseSuc': 1, 'itemSetInfo': (2602, 1), 'useLimit': [(1, 4), (3, 75)], },
     350401:{'sType': 14, 'passiveUse': 1, 'delAfterUse': 1, 'delAfterUseSuc': 1, 'fishingLvReq': 1, 'attraction': 10.0, },
     350402:{'sType': 14, 'passiveUse': 1, 'delAfterUse': 1, 'delAfterUseSuc': 1, 'fishingLvReq': 1, 'attraction': 10.0, },
     350403:{'sType': 14, 'passiveUse': 1, 'delAfterUse': 1, 'delAfterUseSuc': 1, 'fishingLvReq': 1, 'attraction': 10.0, },
@@ -5858,6 +5862,7 @@ data = {
     505023:{'sType': 43, 'delAfterUse': 0, 'delAfterUseSuc': 1, 'zaijuNo': 2061, },
     505024:{'sType': 43, 'delAfterUse': 0, 'delAfterUseSuc': 1, 'zaijuNo': 6000, },
     505025:{'sType': 43, 'delAfterUse': 0, 'delAfterUseSuc': 1, 'zaijuNo': 6001, },
+    505026:{'sType': 8, 'delAfterUse': 0, 'delAfterUseSuc': 1, 'skillId': 40025, 'skillLv': 10, },
     506017:{'sType': 1, 'delAfterUseSuc': 1, 'stateIds': (30603,), 'stateLv': '10', },
     506018:{'sType': 1, 'delAfterUseSuc': 1, 'stateIds': (30604,), 'stateLv': '10', },
     506019:{'sType': 1, 'delAfterUseSuc': 1, 'stateIds': (30605,), 'stateLv': '10', },

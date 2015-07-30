@@ -1,11 +1,10 @@
-# -*- coding: gbk -*-
-#
-#¹«¹²½±Àø°ü_ÅäÖÃ±í.csv
-# µôÎï°ü¼¯ºÏID : bonusBoxId
-# µôÎï°üID : subBonusBoxId
-# ×îĞ¡µÈ¼¶ : lvStart
-# ×î´óµÈ¼¶ : lvEnd
-# ¹«¹²°ü³éÈ¡¼ÆËã·½Ê½ : calcType
+#coding=utf-8#
+#å…¬å…±å¥–åŠ±åŒ…_é…ç½®è¡¨.csv
+# æ‰ç‰©åŒ…é›†åˆID : bonusBoxId
+# æ‰ç‰©åŒ…ID : subBonusBoxId
+# æœ€å°ç­‰çº§ : lvStart
+# æœ€å¤§ç­‰çº§ : lvEnd
+# å…¬å…±åŒ…æŠ½å–è®¡ç®—æ–¹å¼ : calcType
 # bonusSets : bonusSets
 # itemBonus : itemBonus
 
