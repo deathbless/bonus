@@ -65,13 +65,6 @@ def search(input_cid):
                 tstr += "分配方式：分别计算    "
 
             rate = bonus['bonusRate']
-            if bonus['calcType'] == 1:
-                if table >= rate:
-                    table -= rate
-                else:
-                    rate = table
-                    table = 0
-
             temp = ("掉落几率(万分率)：%d    " % (rate))
             tstr += temp
 
@@ -138,15 +131,16 @@ def search(input_cid):
             if bonus.has_key('bonusSets'):
                 bonusSet = bonus['bonusSets']
                 num = 1
+                temptype = bonus['calcType']
                 for Set in bonusSet:
                     temp = "    物品分组表%d —— " % num
                     num = num + 1
 
                     tstr += temp
-                    type = bonus['calcType']
-                    if type == 1:
+
+                    if temptype == 1:
                         temp = "分配方式：分别计算    "
-                    if type == 2:
+                    if temptype == 2:
                         temp = "分配方式：圆桌分配    "
                     tstr += temp
 
@@ -189,12 +183,6 @@ def search(input_cid):
                             tstr += "分配方式：分别计算    "
 
                         rate = bonus['bonusRate']
-                        if bonus['calcType'] == 1:
-                            if table >= rate:
-                                table -= rate
-                            else:
-                                rate = table
-                                table = 0
 
                         temp = ("掉落几率(万分率)：%d    " % (rate))
                         tstr += temp
@@ -236,8 +224,8 @@ def search(input_cid):
         # ans[a] = ans[a].encode("utf-8","ignore")
         str += ans[a]+"\n"
 
-
-    easygui.textbox("编号为%d的宝箱查询到以下结果" % input_cid,"结果",str,codebox=1)
+    boxname = id.data[input_cid]['name']
+    easygui.textbox("编号为%d,名字为 %s 的宝箱查询到以下结果" % (input_cid,boxname),"结果",str,codebox=1)
     mainsearch()
 
 def check(str):
@@ -258,7 +246,6 @@ def mainsearch():
 
 if __name__ == '__main__':
     mainsearch()
-    os.system("pause")
 
 
 
