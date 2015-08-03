@@ -8,12 +8,36 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-from data import bonus_box_data as bbd
-from data import bonus_set_data as bsd
-from data import consumable_item_data as cid
-from data import item_data as id
+class data:
+    def __init__(self):
+        data = {}
 
+bbd = data()
+bsd = data()
+cid = data()
+id = data()
 
+def init():
+    global bbd,bsd,cid,id
+    f = file("./data/bonus_box_data.py")
+    exec(f.read())
+    bbd.data = data
+
+    f = file("./data/bonus_set_data.py")
+    exec(f.read())
+    bsd.data = data
+
+    f = file("./data/consumable_item_data.py")
+    exec(f.read())
+    cid.data = data
+
+    f = file("./data/item_data.py")
+    exec(f.read())
+    id.data = data
+
+    f = file("./data/bonus_box_data.py")
+    exec(f.read())
+    bbd.data = data
 
 def search(input_cid):
     box = 0
@@ -245,6 +269,7 @@ def mainsearch():
         mainsearch()
 
 if __name__ == '__main__':
+    init()
     mainsearch()
 
 

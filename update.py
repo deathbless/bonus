@@ -1,6 +1,5 @@
 #coding=utf-8
 import os
-import easygui
 import codecs
 
 def convertEncoding(from_encode,to_encode,old_filepath):
