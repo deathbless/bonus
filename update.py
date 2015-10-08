@@ -1,5 +1,6 @@
 #coding=utf-8
 import os
+import easygui
 import codecs
 
 def convertEncoding(from_encode,to_encode,old_filepath):
@@ -39,14 +40,35 @@ def dellast(filename):
     f.close()
 
 if __name__ == '__main__':
-    t = easygui.ynbox("请问是否更新！","更新")
+    choices = {'01.孟刚':1,
+               '02.丰羽':2,
+               '03.锦河':3,
+               '04.陈炜':4,
+               '05.阮洋':5,
+               '06.小勤':6,
+               '07.公共':7,
+               '08.潘潘':8,
+               '09.连长':9,
+               '10.小强':10,
+               '11.余飞':11,
+               '12.丝丝':12,
+               '13.格子':13,
+               '14.周唯':14,
+               '15.沈宇杰':15,
+               '16.余辰侃':16,
+               '17.文案':17,}
+    t = easygui.choicebox("请选择要更新的私服:","更新",choices=choices.keys())
     if t == False:
         exit()
+    num = choices[t.encode("UTF-8")]
     os.chdir("data")
-    os.system("update.bat")
+    os.system("update.bat " + str(num))
     dellast("bonus_box_data.py")
     dellast("fame_data.py")
     dellast("bonus_set_data.py")
     dellast("consumable_item_data.py")
     dellast("item_data.py")
+    dellast("treasure_box_data.py")
+    dellast("bonus_data.py")
+    dellast("box_bonus_map_data.py")
     easygui.msgbox("更新完成！","更新")

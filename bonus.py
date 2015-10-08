@@ -16,9 +16,13 @@ bbd = data()
 bsd = data()
 cid = data()
 id = data()
+tbd = data()
+bd = data()
+bbmd = data()
+
 
 def init():
-    global bbd,bsd,cid,id
+    global bbd,bsd,cid,id,tbd,bd,bbmd
     f = file("./data/bonus_box_data.py")
     exec(f.read())
     bbd.data = data
@@ -39,76 +43,160 @@ def init():
     exec(f.read())
     bbd.data = data
 
+    f = file("./data/treasure_box_data.py")
+    exec(f.read())
+    tbd.data = data
+
+    f = file("./data/bonus_data.py")
+    exec(f.read())
+    bd.data = data
+
+    f = file("./data/box_bonus_map_data.py")
+    exec(f.read())
+    bbmd.data = data
+
+def itemSetInfo(index):
+    ans = []
+    str = "奖励分组_数据表(itemSetInfo):\n"
+    ans.append(str)
+    item = bsd.data[index]
+    for bonus in item:
+        tstr = "    "
+        type = ""
+        t_type = bonus['bonusType']
+        if t_type == 1:
+            type = "物品"
+        elif t_type == 2:
+            type = "金钱"
+        elif t_type == 3:
+            type = "声望"
+        elif t_type == 4:
+            type = "经验"
+        elif t_type == 6:
+            type = "社会经验"
+        else:
+            type = "无类型"
+
+        name = id.data[bonus['bonusId']]['name']
+        tid = bonus["bonusId"]
+
+        temp = ("物品ID：%d    " % tid)
+        tstr += temp
+
+        temp = ("类型：%s    " % type)
+        tstr += temp
+
+        if bonus['calcType'] == 1:
+            tstr += "分配方式：圆桌分配    "
+        elif bonus['calcType'] == 2:
+            tstr += "分配方式：分别计算    "
+
+        rate = bonus['bonusRate']
+        temp = ("掉落几率(万分率)：%d    " % (rate))
+        tstr += temp
+        if bonus.has_key('minBonusFormula') and bonus.has_key('maxBonusFormula'):
+            lv = easygui.enterbox("请输入等级：","等级输入")
+            minNum = bonus['minBonusFormula']
+            maxNum = bonus['maxBonusFormula']
+            while not check(lv):
+                easygui.msgbox("请输入数字！")
+                lv = easygui.enterbox("请输入等级：","等级输入")
+            lv = int(lv)
+            calcmin = eval(minNum)
+            calcmax = eval(maxNum)
+            temp = ("掉落数量(最小~最大)：%s = %d ~ %s = %d    " % (minNum,calcmin,maxNum,calcmax))
+            tstr += temp
+        else:
+            minNum = bonus['minBonusNum']
+            maxNum = bonus['maxBonusNum']
+            temp = ("掉落数量(最小~最大)：%d ~ %d    " % (minNum,maxNum))
+            tstr += temp
+        temp = ("物品名称：%s    " % (name))
+        # if tlen <= 30:
+        #     temp += " " * (30 - tlen)
+        tstr += temp
+        ans.append(tstr)
+    return ans
+
+def itemBoxInfo():
+    pass
+
 def search(input_cid):
     box = 0
     if cid.data.has_key(input_cid):
         box = cid.data[input_cid]
     else:
         easygui.msgbox("没有查找到此ID!")
-        mainsearch()
+        choose()
         return
 
     ans = []
-    table = 10000
     if box.has_key('itemSetInfo'):
-        str = "奖励分组_数据表(itemSetInfo):\n"
-        ans.append(str)
-        item = bsd.data[box['itemSetInfo'][0]]
-
-        for bonus in item:
-            tstr = "    "
-            type = ""
-            t_type = bonus['bonusType']
-            if t_type == 1:
-                type = "物品"
-            elif t_type == 2:
-                type = "金钱"
-            elif t_type == 3:
-                type = "声望"
-            elif t_type == 4:
-                type = "经验"
-            elif t_type == 6:
-                type = "社会经验"
-            else:
-                type = "无类型"
-
-            name = id.data[bonus['bonusId']]['name']
-            # name = name.encode("utf-8")
-            # tlen = len(name)
-            tid = bonus["bonusId"]
-
-            temp = ("物品ID：%d    " % tid)
-            tstr += temp
-
-            temp = ("类型：%s    " % type)
-            tstr += temp
-
-            if bonus['calcType'] == 1:
-                tstr += "分配方式：圆桌分配    "
-            elif bonus['calcType'] == 2:
-                tstr += "分配方式：分别计算    "
-
-            rate = bonus['bonusRate']
-            temp = ("掉落几率(万分率)：%d    " % (rate))
-            tstr += temp
-
-            if t_type == 2 or t_type == 3:
-                minNum = bonus['minBonusFormula']
-                maxNum = bonus['maxBonusFormula ']
-                temp = ("掉落数量(最小~最大)：%s ~ %s    " % (minNum,maxNum))
-                tstr += temp
-            else:
-                minNum = bonus['minBonusNum']
-                maxNum = bonus['maxBonusNum']
-                temp = ("掉落数量(最小~最大)：%d ~ %d    " % (minNum,maxNum))
-                tstr += temp
-
-
-            temp = ("物品名称：%s    " % (name))
-            # if tlen <= 30:
-            #     temp += " " * (30 - tlen)
-            tstr += temp
-            ans.append(tstr)
+        ans.extend(itemSetInfo(box['itemSetInfo'][0]))
+        # str = "奖励分组_数据表(itemSetInfo):\n"
+        # ans.append(str)
+        # item = bsd.data[box['itemSetInfo'][0]]
+        #
+        # for bonus in item:
+        #     tstr = "    "
+        #     type = ""
+        #     t_type = bonus['bonusType']
+        #     if t_type == 1:
+        #         type = "物品"
+        #     elif t_type == 2:
+        #         type = "金钱"
+        #     elif t_type == 3:
+        #         type = "声望"
+        #     elif t_type == 4:
+        #         type = "经验"
+        #     elif t_type == 6:
+        #         type = "社会经验"
+        #     else:
+        #         type = "无类型"
+        #
+        #     name = id.data[bonus['bonusId']]['name']
+        #     # name = name.encode("utf-8")
+        #     # tlen = len(name)
+        #     tid = bonus["bonusId"]
+        #
+        #     temp = ("物品ID：%d    " % tid)
+        #     tstr += temp
+        #
+        #     temp = ("类型：%s    " % type)
+        #     tstr += temp
+        #
+        #     if bonus['calcType'] == 1:
+        #         tstr += "分配方式：圆桌分配    "
+        #     elif bonus['calcType'] == 2:
+        #         tstr += "分配方式：分别计算    "
+        #
+        #     rate = bonus['bonusRate']
+        #     temp = ("掉落几率(万分率)：%d    " % (rate))
+        #     tstr += temp
+        #     if bonus.has_key('minBonusFormula') and bonus.has_key('maxBonusFormula'):
+        #         lv = easygui.enterbox("请输入等级：","等级输入")
+        #         minNum = bonus['minBonusFormula']
+        #         maxNum = bonus['maxBonusFormula']
+        #         while not check(lv):
+        #             easygui.msgbox("请输入数字！")
+        #             lv = easygui.enterbox("请输入等级：","等级输入")
+        #         lv = int(lv)
+        #         calcmin = eval(minNum)
+        #         calcmax = eval(maxNum)
+        #         temp = ("掉落数量(最小~最大)：%s = %d ~ %s = %d    " % (minNum,calcmin,maxNum,calcmax))
+        #         tstr += temp
+        #     else:
+        #         minNum = bonus['minBonusNum']
+        #         maxNum = bonus['maxBonusNum']
+        #         temp = ("掉落数量(最小~最大)：%d ~ %d    " % (minNum,maxNum))
+        #         tstr += temp
+        #
+        #
+        #     temp = ("物品名称：%s    " % (name))
+        #     # if tlen <= 30:
+        #     #     temp += " " * (30 - tlen)
+        #     tstr += temp
+        #     ans.append(tstr)
 
 
 
@@ -174,9 +262,9 @@ def search(input_cid):
                     tstr += temp
 
                     item = bsd.data[bonusnum]
-                    for bonus in item:
+                    for tbonus in item:
                         type = ""
-                        t_type = bonus['bonusType']
+                        t_type = tbonus['bonusType']
                         if t_type == 1:
                             type = "物品"
                         elif t_type == 2:
@@ -190,10 +278,10 @@ def search(input_cid):
                         else:
                             type = "无类型"
 
-                        name = id.data[bonus['bonusId']]['name']
+                        name = id.data[tbonus['bonusId']]['name']
                         # name = name.encode("utf-8","ignore")
                         # tlen = len(name)
-                        tid = bonus["bonusId"]
+                        tid = tbonus["bonusId"]
 
                         temp = ("物品ID：%d    " % tid)
                         tstr += temp
@@ -201,24 +289,31 @@ def search(input_cid):
                         temp = ("类型：%s    " % type)
                         tstr += temp
 
-                        if bonus['calcType'] == 1:
+                        if tbonus['calcType'] == 1:
                             tstr += "分配方式：圆桌分配    "
-                        elif bonus['calcType'] == 2:
+                        elif tbonus['calcType'] == 2:
                             tstr += "分配方式：分别计算    "
 
-                        rate = bonus['bonusRate']
+                        rate = tbonus['bonusRate']
 
                         temp = ("掉落几率(万分率)：%d    " % (rate))
                         tstr += temp
 
-                        if t_type == 2 or t_type == 3:
-                            minNum = bonus['minBonusFormula']
-                            maxNum = bonus['maxBonusFormula ']
-                            temp = ("掉落数量(最小~最大)：%s ~ %s    " % (minNum,maxNum))
+                        if tbonus.has_key('minBonusFormula') and tbonus.has_key('maxBonusFormula'):
+                            lv = easygui.enterbox("请输入等级：","等级输入")
+                            minNum = tbonus['minBonusFormula']
+                            maxNum = tbonus['maxBonusFormula']
+                            while not check(lv):
+                                easygui.msgbox("请输入数字！")
+                                lv = easygui.enterbox("请输入等级：","等级输入")
+                            lv = int(lv)
+                            calcmin = eval(minNum)
+                            calcmax = eval(maxNum)
+                            temp = ("掉落数量(最小~最大)：%s = %d ~ %s = %d    " % (minNum,calcmin,maxNum,calcmax))
                             tstr += temp
                         else:
-                            minNum = bonus['minBonusNum']
-                            maxNum = bonus['maxBonusNum']
+                            minNum = tbonus['minBonusNum']
+                            maxNum = tbonus['maxBonusNum']
                             temp = ("掉落数量(最小~最大)：%d ~ %d    " % (minNum,maxNum))
                             tstr += temp
 
@@ -232,13 +327,6 @@ def search(input_cid):
                     temp = "\n——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————\n\n"
                     tstr += temp
 
-
-
-
-
-
-
-
             ans.append(tstr)
 
 
@@ -251,6 +339,39 @@ def search(input_cid):
     boxname = id.data[input_cid]['name']
     easygui.textbox("编号为%d,名字为 %s 的宝箱查询到以下结果" % (input_cid,boxname),"结果",str,codebox=1)
     mainsearch()
+
+
+def search1(input_cid):
+    box = 0
+    if tbd.data.has_key(input_cid):
+        box = tbd.data[input_cid]
+    else:
+        easygui.msgbox("没有查找到此ID!")
+        choose()
+        return
+
+
+    ans = []
+    if box.has_key('bonusId'):
+        str = "奖励配置_主表(bonus_data):\n"
+        ans.append(str)
+        item = box['bonusId']
+        if not bd.data.has_key(item):
+            easygui.msgbox("奖励配置主表找不到对应内容！可能需要重新更新！")
+            choose()
+            return
+        bonus = bd.data[item]
+        #根据type来确定类型，1和公共奖励包一样，2和奖励分组一样
+        if bonus['type'] == 1:
+            str = "公共奖励包_配置表:\n"
+            ans.append(str)
+
+
+    else:
+        easygui.msgbox("名称为 " + tbd.data[input_cid]['name'] + "的宝箱没有掉落物品！")
+        choose()
+        return
+
 
 def check(str):
     if re.match('^[0-9]+$',str):
@@ -266,11 +387,38 @@ def mainsearch():
         search(int(a))
     else:
         easygui.msgbox("请输入数字！")
+        choose()
+
+def mainsearch1():
+    a = easygui.enterbox("请输入要查找的ID","查找")
+    if a == None:
+        return
+    if check(a) and a != "":
+        search1(int(a))
+    else:
+        easygui.msgbox("请输入数字！")
+        choose()
+
+
+def choose():
+    temp = easygui.ynbox("请选择要查找的宝箱类型！",
+                  "宝箱类型选择",
+                  choices=("[<F1>]物品宝箱", "[<F2>]可交互宝箱"),
+                  image=None,
+                  default_choice='[<F1>]物品宝箱',
+                  cancel_choice='[<F2>]可交互宝箱')
+
+    if temp:
         mainsearch()
+    else:
+        search1()
+
 
 if __name__ == '__main__':
     init()
-    mainsearch()
+    choose()
+
+    # mainsearch()
 
 
 
