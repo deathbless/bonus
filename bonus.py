@@ -55,7 +55,7 @@ def init():
     exec(f.read())
     bbmd.data = data
 
-def itemSetInfo(index):
+def itemSetInfo(index,level):
     ans = []
     str = "奖励分组_数据表(itemSetInfo):\n"
     ans.append(str)
@@ -95,13 +95,7 @@ def itemSetInfo(index):
         temp = ("掉落几率(万分率)：%d    " % (rate))
         tstr += temp
         if bonus.has_key('minBonusFormula') and bonus.has_key('maxBonusFormula'):
-            lv = easygui.enterbox("请输入等级：","等级输入")
-            minNum = bonus['minBonusFormula']
-            maxNum = bonus['maxBonusFormula']
-            while not check(lv):
-                easygui.msgbox("请输入数字！")
-                lv = easygui.enterbox("请输入等级：","等级输入")
-            lv = int(lv)
+            lv = level
             calcmin = eval(minNum)
             calcmax = eval(maxNum)
             temp = ("掉落数量(最小~最大)：%s = %d ~ %s = %d    " % (minNum,calcmin,maxNum,calcmax))
@@ -118,7 +112,7 @@ def itemSetInfo(index):
         ans.append(tstr)
     return ans
 
-def itemBoxInfo(index):
+def itemBoxInfo(index,level):
     ans = []
     str = "公共奖励包_配置表(itemBoxInfo):\n"
     ans.append(str)
@@ -127,6 +121,8 @@ def itemBoxInfo(index):
         tstr = "    "
         minlv = bonus['lvStart']
         maxlv = bonus['lvEnd']
+        if (level < minlv or level > maxlv) and level != -1:
+            continue
         temp = ("等级限制(最低~最高)：%d ~ %d    " % (minlv,maxlv))
         tstr += temp
         if bonus.has_key('itemBonus'):
@@ -223,7 +219,7 @@ def itemBoxInfo(index):
         ans.append(tstr)
     return ans
 
-def search(input_cid):
+def search(input_cid,level):
     box = 0
     if cid.data.has_key(input_cid):
         box = cid.data[input_cid]
@@ -234,10 +230,10 @@ def search(input_cid):
 
     ans = []
     if box.has_key('itemSetInfo'):
-        ans.extend(itemSetInfo(box['itemSetInfo'][0]))
+        ans.extend(itemSetInfo(box['itemSetInfo'][0],level))
 
     if box.has_key('itemBoxInfo'):
-        ans.extend(itemBoxInfo(box['itemBoxInfo'][0]))
+        ans.extend(itemBoxInfo(box['itemBoxInfo'][0],level))
 
     str = ""
     for a in range(0,ans.__len__()):
@@ -245,11 +241,14 @@ def search(input_cid):
         str += ans[a]+"\n"
 
     boxname = id.data[input_cid]['name']
-    easygui.textbox("编号为%d,名字为 %s 的物品宝箱查询到以下结果" % (input_cid,boxname),"结果",str,codebox=1)
+    title = "默认全等级结果"
+    if level != -1:
+        title = "人物为%d级时结果"
+    easygui.textbox("编号为%d,名字为 %s 的物品宝箱查询到以下结果" % (input_cid,boxname),title,str,codebox=1)
     choose()
 
 
-def search1(input_cid):
+def search1(input_cid,level):
     box = 0
     if tbd.data.has_key(input_cid):
         box = tbd.data[input_cid]
@@ -273,13 +272,22 @@ def search1(input_cid):
         if bonus['type'] == 1:
             tbonus = bonus['bonusIds']
             for bonusId in tbonus:
-                ans.extend(itemBoxInfo(bonusId))
+                ans.extend(itemBoxInfo(bonusId,level))
         if bonus['type'] == 2:
             tbonus = bonus['bonusIds']
             for bonusId in tbonus:
-                ans.extend(itemSetInfo(tbonus))
+                ans.extend(itemSetInfo(bonusId,level))
         if bonus['type'] == 3:
             tbonus = bonus['fixedBonus']
+            minLv = -1
+            maxLv = 100
+            if tbd.data[input_cid].has_key('needLvRange'):
+                minLv = tbd.data[input_cid]['needLvRange'][0]
+                maxLv = tbd.data[input_cid]['needLvRange'][1]
+            if level < minLv or level > maxLv:
+                easygui.msgbox("此人物等级下没有物品！对应等级为%d~%d"%(minLv,maxLv),"异常结果")
+                choose()
+                return
             for bonusthing in tbonus:
                 tstr = "    "
                 # 1=物品 2=金钱 3=声望 4=经验 5=钓鱼熟练度 6=社会经验 7=灵识 8=公会贡献
@@ -372,11 +380,17 @@ def search1(input_cid):
             str += ans[a]+"\n"
 
         boxname = tbd.data[input_cid]['name']
-        easygui.textbox("编号为%d,名字为 %s 的可交互宝箱查询到以下结果" % (input_cid,boxname),"结果",str,codebox=1)
+        title = "默认全等级结果"
+        if level != -1:
+            title = "人物为%d级时结果"
+        easygui.textbox("编号为%d,名字为 %s 的可交互宝箱查询到以下结果" % (input_cid,boxname),title,str,codebox=1)
         choose()
 
     else:
-        easygui.msgbox("名称为 " + tbd.data[input_cid]['name'] + "的宝箱没有掉落物品！")
+        name = ""
+        if tbd.data[input_cid].has_key('name'):
+            name = tbd.data[input_cid]['name']
+        easygui.msgbox("名称为 " + name + " 的宝箱没有掉落物品！")
         choose()
         return
 
@@ -388,24 +402,30 @@ def check(str):
         return False
 
 def mainsearch():
-    a = easygui.enterbox("请输入要查找的ID","物品宝箱查找")
+    a = easygui.multenterbox("请在下面输入你要查找的信息，等级可不填，不填默认全等级","物品宝箱查找",("宝箱ID：","人物等级："))
     if a == None:
         return
-    if check(a) and a != "":
-        search(int(a))
+    if check(a[0]) and a[0] != "":
+        if check(a[1]) and a[1] != "":
+            search(int(a[0]),int(a[1]))
+        else:
+            search(int(a[0]),-1)
     else:
         easygui.msgbox("请输入数字！")
-        choose()
+        mainsearch()
 
 def mainsearch1():
-    a = easygui.enterbox("请输入要查找的ID","可交互宝箱查找")
+    a = easygui.multenterbox("请在下面输入你要查找的信息，等级可不填，不填默认全等级","可交互宝箱查找",("宝箱ID：","人物等级："))
     if a == None:
         return
-    if check(a) and a != "":
-        search1(int(a))
+    if check(a[0]) and a[0] != "":
+        if check(a[1]) and a[1] != "":
+            search1(int(a[0]),int(a[1]))
+        else:
+            search1(int(a[0]),-1)
     else:
         easygui.msgbox("请输入数字！")
-        choose()
+        mainsearch1()
 
 
 def choose():
@@ -425,7 +445,7 @@ def choose():
 if __name__ == '__main__':
     init()
     choose()
-
+    easygui.multenterbox
     # mainsearch()
 
 
