@@ -1,2 +1,2 @@
-python update.py
+data/update.bat
 pause

@@ -69,7 +69,7 @@ data = {
 , 5: 96000
 , 6: 192000
 }, },
-    420:{'name': '帝社功勋', 'type': 1, 'weekGainLimit': '(lv*30+2000)*7', 'weekLimitTransRatio': 0.6, },
+    420:{'name': '帝社功勋', 'type': 1, 'weekGainLimit': '(lv*30+2000)*8', 'weekLimitTransRatio': 0.6, },
     421:{'name': '苏澜城声望', 'type': 2, 'initVal': 5000, 'maxLv': 7, 'lvUpNeed': {1: 5000, 2: 21000
 , 3: 64000
 , 4: 105000

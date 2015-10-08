@@ -1,16 +1,16 @@
 #coding=utf-8#
-#奖励分组_数据表.csv
-# 发布服 : publishTag
-# 物品分组ID : bonusSetId
-# 序列ID : listId
-# 物品分组表随机方式 : calcType
-# 随机获取物品的类型 : bonusType
-# 所选类型ID : bonusId
-# 掉落万分率 : bonusRate
-# 最小掉落数量 : minBonusNum
-# 最大掉落数量 : maxBonusNum
-# 最小掉落数量公式 : minBonusFormula
-# 最大掉落数量公式 : maxBonusFormula
+#濂栧姳鍒嗙粍_鏁版嵁琛�.csv
+# 鍙戝竷鏈� : publishTag
+# 鐗╁搧鍒嗙粍ID : bonusSetId
+# 搴忓垪ID : listId
+# 鐗╁搧鍒嗙粍琛ㄩ殢鏈烘柟寮� : calcType
+# 闅忔満鑾峰彇鐗╁搧鐨勭被鍨� : bonusType
+# 鎵�閫夌被鍨婭D : bonusId
+# 鎺夎惤涓囧垎鐜� : bonusRate
+# 鏈�灏忔帀钀芥暟閲� : minBonusNum
+# 鏈�澶ф帀钀芥暟閲� : maxBonusNum
+# 鏈�灏忔帀钀芥暟閲忓叕寮� : minBonusFormula
+# 鏈�澶ф帀钀芥暟閲忓叕寮� : maxBonusFormula
 
 data = {
     1:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 300000, 'bonusRate': 1000, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 300002, 'bonusRate': 500, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 3, 'calcType': 1, 'bonusType': 1, 'bonusId': 300003, 'bonusRate': 500, 'minBonusNum': 1, 'maxBonusNum': 1, },],

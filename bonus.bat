@@ -1,2 +1,0 @@
-python bonus.py
-pause
