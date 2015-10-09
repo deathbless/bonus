@@ -20,6 +20,8 @@ tbd = data()
 bd = data()
 bbmd = data()
 
+school = {3:'圣堂',4:'玉虚',5:'光刃',6:'炎天',7:'玲珑',8:'流光'}
+
 
 def init():
     global bbd,bsd,cid,id,tbd,bd,bbmd
@@ -235,6 +237,34 @@ def search(input_cid,level):
     if box.has_key('itemBoxInfo'):
         ans.extend(itemBoxInfo(box['itemBoxInfo'][0],level))
 
+    if box.has_key('needReMapBonusId'):
+        if box['needReMapBonusId']:
+            try:
+                allBonus = bbmd.data[input_cid]
+                for bonus in allBonus:
+                    tstr = ""
+                    if bonus.has_key('sex'):
+                        if bonus['sex'][0] == 1:
+                            tstr += "性别：男    "
+                        if bonus['sex'][0] == 2:
+                            tstr += "性别：女    "
+
+                    if bonus.has_key('school'):
+                        tstr += "门派：%s    " % school[bonus['school'][0]]
+
+                    if bonus.has_key('bodyType'):
+                        try:
+                            tstr += "体形：%d" % bonus['bodyType']
+                        except TypeError:
+                            pass
+
+                    ans.append(tstr)
+                    if bonus.has_key('bonusBoxId'):
+                        ans.extend(itemBoxInfo(bonus['bonusBoxId'],level))
+
+            except KeyError:
+                easygui.msgbox("特殊宝箱数据内没有此数据！")
+
     str = ""
     for a in range(0,ans.__len__()):
         # ans[a] = ans[a].encode("utf-8","ignore")
@@ -243,7 +273,7 @@ def search(input_cid,level):
     boxname = id.data[input_cid]['name']
     title = "默认全等级结果"
     if level != -1:
-        title = "人物为%d级时结果"
+        title = "人物为%d级时结果" % level
     easygui.textbox("编号为%d,名字为 %s 的物品宝箱查询到以下结果" % (input_cid,boxname),title,str,codebox=1)
     choose()
 
@@ -382,7 +412,7 @@ def search1(input_cid,level):
         boxname = tbd.data[input_cid]['name']
         title = "默认全等级结果"
         if level != -1:
-            title = "人物为%d级时结果"
+            title = "人物为%d级时结果" % level
         easygui.textbox("编号为%d,名字为 %s 的可交互宝箱查询到以下结果" % (input_cid,boxname),title,str,codebox=1)
         choose()
 
