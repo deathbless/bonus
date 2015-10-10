@@ -71,4 +71,5 @@ if __name__ == '__main__':
     dellast("treasure_box_data.py")
     dellast("bonus_data.py")
     dellast("box_bonus_map_data.py")
+    dellast("game_item_limit_data.py")
     easygui.msgbox("更新完成！","更新")

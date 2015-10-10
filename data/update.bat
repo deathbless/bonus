@@ -7,6 +7,7 @@ del consumable_item_data.py
 del bonus_data.py
 del treasure_box_data.py
 del box_bonus_map_data.py
+del game_item_limit_data.py
 :²Ëµ¥
 cls
 
@@ -41,6 +42,7 @@ rsync --port 11369 -a 10.240.120.155::entities/%srvname%/common_server/data/cons
 rsync --port 11369 -a 10.240.120.155::entities/%srvname%/common_server/data/bonus_data.py .
 rsync --port 11369 -a 10.240.120.155::entities/%srvname%/common_server/data/treasure_box_data.py .
 rsync --port 11369 -a 10.240.120.155::entities/%srvname%/common_server/data/box_bonus_map_data.py .
+rsync --port 11369 -a 10.240.120.155::entities/%srvname%/common_server/data/game_item_limit_data.py .
 goto end
 
 :end

@@ -19,43 +19,42 @@ id = data()
 tbd = data()
 bd = data()
 bbmd = data()
+gild = data()
 
 school = {3:'圣堂',4:'玉虚',5:'光刃',6:'炎天',7:'玲珑',8:'流光'}
+bindType = {0:"无绑定概念",1:'获得绑定',2:'装备后绑定',3:'使用后绑定',4:'公会绑定'}
 
+def readFile(name):
+    try:
+        f = file("./data/"+name)
+        exec(f.read())
+        return data
+    except IOError:
+        easygui.msgbox("缺少名字为%s的文件！请重新更新！" % name,"错误")
+        exit(0)
 
 def init():
-    global bbd,bsd,cid,id,tbd,bd,bbmd
-    f = file("./data/bonus_box_data.py")
-    exec(f.read())
-    bbd.data = data
+    global bbd,bsd,cid,id,tbd,bd,bbmd,gild
 
-    f = file("./data/bonus_set_data.py")
-    exec(f.read())
-    bsd.data = data
+    bbd.data = readFile("bonus_box_data.py")
+    bsd.data = readFile("bonus_set_data.py")
+    cid.data = readFile("consumable_item_data.py")
+    id.data = readFile("item_data.py")
+    bbd.data = readFile("bonus_box_data.py")
+    tbd.data = readFile("treasure_box_data.py")
+    bd.data = readFile("bonus_data.py")
+    bbmd.data = readFile("box_bonus_map_data.py")
+    gild.data = readFile("game_item_limit_data.py")
 
-    f = file("./data/consumable_item_data.py")
-    exec(f.read())
-    cid.data = data
 
-    f = file("./data/item_data.py")
-    exec(f.read())
-    id.data = data
+def checkLimit(itemSet, itemId):
+    index = (itemSet,itemId)
+    if gild.data.has_key(index):
+        num = gild.data[index]['maxNum']
+        return "全服投放%d个" % num
+    else:
+        return "无"
 
-    f = file("./data/bonus_box_data.py")
-    exec(f.read())
-    bbd.data = data
-
-    f = file("./data/treasure_box_data.py")
-    exec(f.read())
-    tbd.data = data
-
-    f = file("./data/bonus_data.py")
-    exec(f.read())
-    bd.data = data
-
-    f = file("./data/box_bonus_map_data.py")
-    exec(f.read())
-    bbmd.data = data
 
 def itemSetInfo(index,level):
     ans = []
@@ -80,7 +79,9 @@ def itemSetInfo(index,level):
             type = "无类型"
 
         name = id.data[bonus['bonusId']]['name']
+        bind = bindType[id.data[bonus['bonusId']]['bindType']]
         tid = bonus["bonusId"]
+        limit = checkLimit(index,tid)
 
         temp = ("物品ID：%d    " % tid)
         tstr += temp
@@ -107,7 +108,7 @@ def itemSetInfo(index,level):
             maxNum = bonus['maxBonusNum']
             temp = ("掉落数量(最小~最大)：%d ~ %d    " % (minNum,maxNum))
             tstr += temp
-        temp = ("物品名称：%s    " % (name))
+        temp = ("物品名称：%s    绑定类型：%s    投放限制：%s    " % (name,bind,limit))
         # if tlen <= 30:
         #     temp += " " * (30 - tlen)
         tstr += temp
@@ -130,8 +131,10 @@ def itemBoxInfo(index,level):
         if bonus.has_key('itemBonus'):
             itemBonus = bonus['itemBonus']
             name = id.data[itemBonus[0]]['name']
+            bind = bindType[id.data[itemBonus[0]]['bindType']]
             # name = name.encode("utf-8","ignore")
             tid = itemBonus[0]
+            limit = checkLimit(0,tid)
             temp = ("物品ID：%d    " % tid)
             tstr += temp
             temp = ("物品类型：物品    ")
@@ -143,7 +146,7 @@ def itemBoxInfo(index,level):
             maxNum = itemBonus[3]
             temp = ("掉落数量(最小~最大)：%s ~ %s    " % (minNum,maxNum))
             tstr += temp
-            temp = ("物品名称：%s    " % (name))
+            temp = ("物品名称：%s    绑定类型：%s    投放限制：%s    " % (name,bind,limit))
             tstr += temp
         if bonus.has_key('bonusSets') and bonus.has_key('itemBonus'):
             tstr += '\n\n'
@@ -160,6 +163,7 @@ def itemBoxInfo(index,level):
                 if temptype == 2:
                     temp = "分配方式：圆桌分配    "
                 tstr += temp
+                #bonusnum就是bonusSet的id
                 bonusnum = Set[0]
                 rate = Set[1]
                 temp = "掉落几率(万分率)：%d    \n        " % rate
@@ -181,6 +185,8 @@ def itemBoxInfo(index,level):
                     else:
                         type = "无类型"
                     name = id.data[tbonus['bonusId']]['name']
+                    bind = bindType[id.data[tbonus['bonusId']]['bindType']]
+                    limit = checkLimit(bonusnum,tbonus['bonusId'])
                     # name = name.encode("utf-8","ignore")
                     # tlen = len(name)
                     tid = tbonus["bonusId"]
@@ -212,7 +218,7 @@ def itemBoxInfo(index,level):
                         maxNum = tbonus['maxBonusNum']
                         temp = ("掉落数量(最小~最大)：%d ~ %d    " % (minNum,maxNum))
                         tstr += temp
-                    temp = ("物品名称：%s    \n        " % (name))
+                    temp = ("物品名称：%s    绑定类型：%s    投放限制：%s\n    " % (name,bind,limit))
                     tstr += temp
                     # if tlen <= 30:
                     #     temp += " " * (30 - tlen)
@@ -324,13 +330,15 @@ def search1(input_cid,level):
                 if bonusthing[0] == 1:
                     tid = bonusthing[1]
                     name = id.data[tid]['name']
+                    bind = bindType[id.data[tid]['bindType']]
+                    limit = checkLimit(0,)
                     temp = ("物品ID：%d    " % tid)
                     tstr += temp
                     temp = ("类型：%s    " % "物品")
                     tstr += temp
                     temp = ("掉落数量：%d    " % bonusthing[2])
                     tstr += temp
-                    temp = ("物品名称：%s    " % name)
+                    temp = ("物品名称：%s    绑定类型：%s    投放限制：%s" % (name,bind,limit))
                     tstr += temp
                     ans.append(tstr)
 

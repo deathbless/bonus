@@ -1,16 +1,16 @@
 #coding=utf-8#
-#濂栧姳鍒嗙粍_鏁版嵁琛�.csv
-# 鍙戝竷鏈� : publishTag
-# 鐗╁搧鍒嗙粍ID : bonusSetId
-# 搴忓垪ID : listId
-# 鐗╁搧鍒嗙粍琛ㄩ殢鏈烘柟寮� : calcType
-# 闅忔満鑾峰彇鐗╁搧鐨勭被鍨� : bonusType
-# 鎵�閫夌被鍨婭D : bonusId
-# 鎺夎惤涓囧垎鐜� : bonusRate
-# 鏈�灏忔帀钀芥暟閲� : minBonusNum
-# 鏈�澶ф帀钀芥暟閲� : maxBonusNum
-# 鏈�灏忔帀钀芥暟閲忓叕寮� : minBonusFormula
-# 鏈�澶ф帀钀芥暟閲忓叕寮� : maxBonusFormula
+#奖励分组_数据表.csv
+# 发布服 : publishTag
+# 物品分组ID : bonusSetId
+# 序列ID : listId
+# 物品分组表随机方式 : calcType
+# 随机获取物品的类型 : bonusType
+# 所选类型ID : bonusId
+# 掉落万分率 : bonusRate
+# 最小掉落数量 : minBonusNum
+# 最大掉落数量 : maxBonusNum
+# 最小掉落数量公式 : minBonusFormula
+# 最大掉落数量公式 : maxBonusFormula
 
 data = {
     1:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 300000, 'bonusRate': 1000, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 300002, 'bonusRate': 500, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 3, 'calcType': 1, 'bonusType': 1, 'bonusId': 300003, 'bonusRate': 500, 'minBonusNum': 1, 'maxBonusNum': 1, },],
@@ -883,7 +883,7 @@ data = {
     876:[{'listId': 1, 'calcType': 2, 'bonusType': 1, 'bonusId': 410267, 'bonusRate': 10000, 'minBonusNum': 388, 'maxBonusNum': 688, },],
     877:[{'listId': 1, 'calcType': 2, 'bonusType': 1, 'bonusId': 410271, 'bonusRate': 10000, 'minBonusNum': 338, 'maxBonusNum': 688, },],
     878:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 220004, 'bonusRate': 5000, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 220007, 'bonusRate': 5000, 'minBonusNum': 1, 'maxBonusNum': 1, },],
-    879:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 220014, 'bonusRate': 2500, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 220016, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 3, 'calcType': 1, 'bonusType': 1, 'bonusId': 220019, 'bonusRate': 800, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 4, 'calcType': 1, 'bonusType': 1, 'bonusId': 220020, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 5, 'calcType': 1, 'bonusType': 1, 'bonusId': 220021, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 6, 'calcType': 1, 'bonusType': 1, 'bonusId': 220047, 'bonusRate': 2500, 'minBonusNum': 1, 'maxBonusNum': 1, },],
+    879:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 220014, 'bonusRate': 2250, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 220016, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 3, 'calcType': 1, 'bonusType': 1, 'bonusId': 220019, 'bonusRate': 800, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 4, 'calcType': 1, 'bonusType': 1, 'bonusId': 220020, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 5, 'calcType': 1, 'bonusType': 1, 'bonusId': 220021, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 6, 'calcType': 1, 'bonusType': 1, 'bonusId': 220047, 'bonusRate': 2250, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 7, 'calcType': 1, 'bonusType': 1, 'bonusId': 220043, 'bonusRate': 500, 'minBonusNum': 1, 'maxBonusNum': 1, },],
     880:[{'listId': 1, 'calcType': 2, 'bonusType': 1, 'bonusId': 220015, 'bonusRate': 10000, 'minBonusNum': 1, 'maxBonusNum': 1, },],
     881:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 410268, 'bonusRate': 9000, 'minBonusNum': 3, 'maxBonusNum': 5, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 410406, 'bonusRate': 1000, 'minBonusNum': 1, 'maxBonusNum': 1, },],
     882:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 225064, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 225066, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 3, 'calcType': 1, 'bonusType': 1, 'bonusId': 225018, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 4, 'calcType': 1, 'bonusType': 1, 'bonusId': 225019, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 5, 'calcType': 1, 'bonusType': 1, 'bonusId': 225023, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 6, 'calcType': 1, 'bonusType': 1, 'bonusId': 225071, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 7, 'calcType': 1, 'bonusType': 1, 'bonusId': 225011, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 8, 'calcType': 1, 'bonusType': 1, 'bonusId': 225012, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 9, 'calcType': 1, 'bonusType': 1, 'bonusId': 225026, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 10, 'calcType': 1, 'bonusType': 1, 'bonusId': 225051, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },],
@@ -1207,7 +1207,7 @@ data = {
     1213:[{'listId': 1, 'calcType': 2, 'bonusType': 1, 'bonusId': 240114, 'bonusRate': 10000, 'minBonusNum': 12, 'maxBonusNum': 12, },],
     1214:[{'listId': 1, 'calcType': 2, 'bonusType': 2, 'bonusId': 1, 'bonusRate': 10000, 'minBonusNum': 688888, 'maxBonusNum': 688888, },{'listId': 2, 'calcType': 2, 'bonusType': 1, 'bonusId': 300174, 'bonusRate': 10000, 'minBonusNum': 5, 'maxBonusNum': 5, },{'listId': 3, 'calcType': 2, 'bonusType': 1, 'bonusId': 300175, 'bonusRate': 10000, 'minBonusNum': 2, 'maxBonusNum': 2, },],
     1215:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 220504, 'bonusRate': 5000, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 220507, 'bonusRate': 5000, 'minBonusNum': 1, 'maxBonusNum': 1, },],
-    1216:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 220514, 'bonusRate': 2500, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 220516, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 3, 'calcType': 1, 'bonusType': 1, 'bonusId': 220519, 'bonusRate': 800, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 4, 'calcType': 1, 'bonusType': 1, 'bonusId': 220520, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 5, 'calcType': 1, 'bonusType': 1, 'bonusId': 220521, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 6, 'calcType': 1, 'bonusType': 1, 'bonusId': 220542, 'bonusRate': 2500, 'minBonusNum': 1, 'maxBonusNum': 1, },],
+    1216:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 220514, 'bonusRate': 2250, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 220516, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 3, 'calcType': 1, 'bonusType': 1, 'bonusId': 220519, 'bonusRate': 800, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 4, 'calcType': 1, 'bonusType': 1, 'bonusId': 220520, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 5, 'calcType': 1, 'bonusType': 1, 'bonusId': 220521, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 6, 'calcType': 1, 'bonusType': 1, 'bonusId': 220542, 'bonusRate': 2250, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 7, 'calcType': 1, 'bonusType': 1, 'bonusId': 220543, 'bonusRate': 500, 'minBonusNum': 1, 'maxBonusNum': 1, },],
     1217:[{'listId': 1, 'calcType': 2, 'bonusType': 1, 'bonusId': 220515, 'bonusRate': 10000, 'minBonusNum': 1, 'maxBonusNum': 1, },],
     1218:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 410272, 'bonusRate': 9000, 'minBonusNum': 3, 'maxBonusNum': 5, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 410407, 'bonusRate': 1000, 'minBonusNum': 1, 'maxBonusNum': 1, },],
     1219:[{'listId': 1, 'calcType': 1, 'bonusType': 1, 'bonusId': 225564, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 2, 'calcType': 1, 'bonusType': 1, 'bonusId': 225566, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 3, 'calcType': 1, 'bonusType': 1, 'bonusId': 225518, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 4, 'calcType': 1, 'bonusType': 1, 'bonusId': 225519, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 5, 'calcType': 1, 'bonusType': 1, 'bonusId': 225523, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 6, 'calcType': 1, 'bonusType': 1, 'bonusId': 225571, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 7, 'calcType': 1, 'bonusType': 1, 'bonusId': 225511, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 8, 'calcType': 1, 'bonusType': 1, 'bonusId': 225512, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 9, 'calcType': 1, 'bonusType': 1, 'bonusId': 225526, 'bonusRate': 1400, 'minBonusNum': 1, 'maxBonusNum': 1, },{'listId': 10, 'calcType': 1, 'bonusType': 1, 'bonusId': 225551, 'bonusRate': 900, 'minBonusNum': 1, 'maxBonusNum': 1, },],

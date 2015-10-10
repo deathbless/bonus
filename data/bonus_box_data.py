@@ -839,7 +839,7 @@ data = {
     835:[{'subBonusBoxId': 1, 'lvStart': 1, 'lvEnd': 100, 'calcType': 1, 'bonusSets': [(2928, 10000), (2929, 10000)], },],
     836:[{'subBonusBoxId': 1, 'lvStart': 1, 'lvEnd': 100, 'calcType': 1, 'bonusSets': [(2930, 150),], },],
     837:[{'subBonusBoxId': 1, 'lvStart': 35, 'lvEnd': 54, 'calcType': 1, 'bonusSets': [(2859, 10000),], },{'subBonusBoxId': 2, 'lvStart': 55, 'lvEnd': 64, 'calcType': 1, 'bonusSets': [(2861, 10000),], },{'subBonusBoxId': 3, 'lvStart': 65, 'lvEnd': 100, 'calcType': 1, 'bonusSets': [(2863, 10000),], },],
-    838:[{'subBonusBoxId': 1, 'lvStart': 1, 'lvEnd': 100, 'calcType': 1, 'bonusSets': [(2930, 75), (2936, 6500)], },],
+    838:[{'subBonusBoxId': 1, 'lvStart': 1, 'lvEnd': 100, 'calcType': 1, 'bonusSets': [(2930, 75),], },],
     839:[{'subBonusBoxId': 1, 'lvStart': 1, 'lvEnd': 100, 'calcType': 1, 'bonusSets': [(2941, 10000), (2942, 10000), (2943, 10000)], },],
     840:[{'subBonusBoxId': 1, 'lvStart': 1, 'lvEnd': 100, 'calcType': 2, 'bonusSets': [(2974, 9680), (2976, 137), (2978, 167), (2980, 11), (2982, 5)], },],
     841:[{'subBonusBoxId': 1, 'lvStart': 1, 'lvEnd': 100, 'calcType': 2, 'bonusSets': [(2975, 9680), (2977, 137), (2979, 167), (2981, 11), (2983, 5)], },],
