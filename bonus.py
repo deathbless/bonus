@@ -21,7 +21,7 @@ bd = data()
 bbmd = data()
 gild = data()
 
-school = {3:'圣堂',4:'玉虚',5:'光刃',6:'炎天',7:'玲珑',8:'流光'}
+school = {3:'圣堂',4:'玉虚',5:'光刃',6:'炎天',7:'灵珑',8:'流光'}
 bindType = {0:"无绑定概念",1:'获得绑定',2:'装备后绑定',3:'使用后绑定',4:'公会绑定'}
 
 def readFile(name):
@@ -166,7 +166,7 @@ def itemBoxInfo(index,level):
                 #bonusnum就是bonusSet的id
                 bonusnum = Set[0]
                 rate = Set[1]
-                temp = "掉落几率(万分率)：%d    \n        " % rate
+                temp = "掉落几率(万分率)：%d    \npy    " % rate
                 tstr += temp
                 item = bsd.data[bonusnum]
                 for tbonus in item:
@@ -190,7 +190,7 @@ def itemBoxInfo(index,level):
                     # name = name.encode("utf-8","ignore")
                     # tlen = len(name)
                     tid = tbonus["bonusId"]
-                    temp = ("物品ID：%d    " % tid)
+                    temp = ("    物品ID：%d    " % tid)
                     tstr += temp
                     temp = ("类型：%s    " % type)
                     tstr += temp
