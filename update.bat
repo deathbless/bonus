@@ -1,2 +1,0 @@
-data/update.bat
-pause

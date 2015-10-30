@@ -21,8 +21,9 @@ bd = data()
 bbmd = data()
 gild = data()
 
-school = {3:'圣堂',4:'玉虚',5:'光刃',6:'炎天',7:'灵珑',8:'流光'}
+school = {3:'圣堂',4:'玉虚',5:'光刃',6:'炎天',7:'玲珑',8:'流光'}
 bindType = {0:"无绑定概念",1:'获得绑定',2:'装备后绑定',3:'使用后绑定',4:'公会绑定'}
+limitInterval = {1:'每天',2:'每周',3:'永久',4:'每月',5:'每季度'}
 
 def readFile(name):
     try:
@@ -131,6 +132,12 @@ def itemBoxInfo(index,level):
         if bonus.has_key('itemBonus'):
             itemBonus = bonus['itemBonus']
             name = id.data[itemBonus[0]]['name']
+            if id.data[itemBonus[0]].has_key('sexReq'):
+                if id.data[itemBonus[0]]['sexReq'] == 1:
+                    name += "(性别：男)"
+                if id.data[itemBonus[0]]['sexReq'] == 2:
+                    name += "(性别：女)"
+
             bind = bindType[id.data[itemBonus[0]]['bindType']]
             # name = name.encode("utf-8","ignore")
             tid = itemBonus[0]
@@ -166,7 +173,7 @@ def itemBoxInfo(index,level):
                 #bonusnum就是bonusSet的id
                 bonusnum = Set[0]
                 rate = Set[1]
-                temp = "掉落几率(万分率)：%d    \npy    " % rate
+                temp = "掉落几率(万分率)：%d    \n    " % rate
                 tstr += temp
                 item = bsd.data[bonusnum]
                 for tbonus in item:
@@ -185,6 +192,11 @@ def itemBoxInfo(index,level):
                     else:
                         type = "无类型"
                     name = id.data[tbonus['bonusId']]['name']
+                    if id.data[tbonus['bonusId']].has_key('sexReq'):
+                        if id.data[itemBonus[0]]['sexReq'] == 1:
+                            name += "(性别：男)"
+                        if id.data[itemBonus[0]]['sexReq'] == 2:
+                            name += "(性别：女)"
                     bind = bindType[id.data[tbonus['bonusId']]['bindType']]
                     limit = checkLimit(bonusnum,tbonus['bonusId'])
                     # name = name.encode("utf-8","ignore")
@@ -280,6 +292,10 @@ def search(input_cid,level):
     title = "默认全等级结果"
     if level != -1:
         title = "人物为%d级时结果" % level
+
+    if cid.data.has_key(input_cid) and cid.data[input_cid].has_key('useLimit'):
+        boxname += "(使用间隔为 %s ,使用次数为 %d 次)" % (limitInterval[cid.data[input_cid]['useLimit'][0][0]],cid.data[input_cid]['useLimit'][0][1])
+
     easygui.textbox("编号为%d,名字为 %s 的物品宝箱查询到以下结果" % (input_cid,boxname),title,str,codebox=1)
     choose()
 
@@ -330,6 +346,11 @@ def search1(input_cid,level):
                 if bonusthing[0] == 1:
                     tid = bonusthing[1]
                     name = id.data[tid]['name']
+                    if id.data[tid].has_key('sexReq'):
+                        if id.data[itemBonus[0]]['sexReq'] == 1:
+                            name += "(性别：男)"
+                        if id.data[itemBonus[0]]['sexReq'] == 2:
+                            name += "(性别：女)"
                     bind = bindType[id.data[tid]['bindType']]
                     limit = checkLimit(0,)
                     temp = ("物品ID：%d    " % tid)
@@ -421,6 +442,10 @@ def search1(input_cid,level):
         title = "默认全等级结果"
         if level != -1:
             title = "人物为%d级时结果" % level
+
+        if cid.data.has_key(input_cid) and cid.data[input_cid].has_key('useLimit'):
+            boxname += "(使用间隔为 %s ,使用次数为 %d 次)" % (limitInterval[cid.data[input_cid]['useLimit'][0][0]],cid.data[input_cid]['useLimit'][0][1])
+
         easygui.textbox("编号为%d,名字为 %s 的可交互宝箱查询到以下结果" % (input_cid,boxname),title,str,codebox=1)
         choose()
 
@@ -483,7 +508,6 @@ def choose():
 if __name__ == '__main__':
     init()
     choose()
-    easygui.multenterbox
     # mainsearch()
 
 

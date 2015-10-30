@@ -28,7 +28,12 @@ if %选择%==13 set %srvname=cyg
 if %选择%==14 set %srvname=zw
 if %选择%==15 set %srvname=syj
 if %选择%==16 set %srvname=yck
-if %选择%==17 goto syncwa
+if %选择%==17 set %srvname=hzxu_xiaojun
+if %选择%==18 set %srvname=hzyanweiming
+if %选择%==19 set %srvname=hzzhaowenjing
+if %选择%==20 set %srvname=autotest
+if %选择%==21 set %srvname=hzliuyuxuan
+if %选择%==22 goto syncwa
 goto syncsf
 
 

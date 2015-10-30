@@ -84,7 +84,6 @@ def search1(input_cid,level):
     if box.has_key('itemBoxInfo'):
         itemBoxInfo(box['itemBoxInfo'][0],level)
 
-    if
 
 
 def search2():
