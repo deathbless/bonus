@@ -347,12 +347,12 @@ def search1(input_cid,level):
                     tid = bonusthing[1]
                     name = id.data[tid]['name']
                     if id.data[tid].has_key('sexReq'):
-                        if id.data[itemBonus[0]]['sexReq'] == 1:
+                        if id.data[tid]['sexReq'] == 1:
                             name += "(性别：男)"
-                        if id.data[itemBonus[0]]['sexReq'] == 2:
+                        if id.data[tid]['sexReq'] == 2:
                             name += "(性别：女)"
                     bind = bindType[id.data[tid]['bindType']]
-                    limit = checkLimit(0,)
+                    limit = checkLimit(0,tid)
                     temp = ("物品ID：%d    " % tid)
                     tstr += temp
                     temp = ("类型：%s    " % "物品")
