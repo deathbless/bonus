@@ -100,9 +100,14 @@ def itemSetInfo(index,level):
         tstr += temp
         if bonus.has_key('minBonusFormula') and bonus.has_key('maxBonusFormula'):
             lv = level
-            calcmin = eval(minNum)
-            calcmax = eval(maxNum)
-            temp = ("掉落数量(最小~最大)：%s = %d ~ %s = %d    " % (minNum,calcmin,maxNum,calcmax))
+            try:
+                calcmin = eval(minNum)
+                calcmax = eval(maxNum)
+                temp = ("掉落数量(最小~最大)：%s = %d ~ %s = %d    " % (minNum,calcmin,maxNum,calcmax))
+            except:
+                calcmin = ""
+                calcmax = ""
+                temp = ("掉落数量(最小~最大)：%s = %s ~ %s = %s    " % (minNum,calcmin,maxNum,calcmax))
             tstr += temp
         else:
             minNum = bonus['minBonusNum']
@@ -221,9 +226,14 @@ def itemBoxInfo(index,level):
                             easygui.msgbox("请输入数字！")
                             lv = easygui.enterbox("请输入等级：","等级输入")
                         lv = int(lv)
-                        calcmin = eval(minNum)
-                        calcmax = eval(maxNum)
-                        temp = ("掉落数量(最小~最大)：%s = %d ~ %s = %d    " % (minNum,calcmin,maxNum,calcmax))
+                        try:
+                           calcmin = eval(minNum)
+                           calcmax = eval(maxNum)
+                           temp = ("掉落数量(最小~最大)：%s = %d ~ %s = %d    " % (minNum,calcmin,maxNum,calcmax))
+                        except:
+                           calcmin = ""
+                           calcmax = ""
+                           temp = ("掉落数量(最小~最大)：%s = %s ~ %s = %s    " % (minNum,calcmin,maxNum,calcmax))
                         tstr += temp
                     else:
                         minNum = tbonus['minBonusNum']
